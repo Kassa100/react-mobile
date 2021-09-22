@@ -1,26 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useLogin from '../../redux/store/actions/login'
-import Login from './Login'
-
-export default function LoginBox(props) {
+import { Toast } from 'antd-mobile'
+import { withRouter } from 'react-router-dom'
+import { useBack } from '../../hooks'
+export default withRouter(function LoginBox(props) {
+    const { registerUserName, registerPassword } = props
     const [user, setUser] = useState('')
     const [pwd, setPwd] = useState('')
     const [vcode, setVcode] = useState('')
     const [vcodeSrc, setVcodeSrc] = useState('/miaov/user/verify?' + Date.now())
     const login = useLogin();
+    const goBack = useBack(props.history)
+    const { setDeg } = props
+    useEffect(() => {
+        setUser(registerUserName)
+        setPwd(registerPassword)
+    }, [registerUserName, registerPassword])
     function toLogon() {
         login(user, pwd, vcode).then((data) => {
             if (data.code !== 0) {
-                alert(data.msg)
+                Toast.fail(data.msg)
+                setVcodeSrc('/miaov/user/verify?' + Date.now())
             } else {
-
+                Toast.success(data.msg)
+                goBack()
             }
         })
     }
     return (
         <div className="login_box">
             <figure className="user_img">
-                <img src={require("../../assets/images/user_img.png")} alt="" />
+                <img src={require("../../assets/images/user_img.png").default} alt="" />
                 <figcaption>如有账号，请直接登录</figcaption>
             </figure>
             <div className="login_form">
@@ -56,8 +66,10 @@ export default function LoginBox(props) {
                     <a >忘记密码？</a>
                 </p> */}
                 <button className="form_btn" onClick={toLogon}>登录</button>
-                <p className="form_tip">没有帐号？<a href='#'>立即注册</a></p>
+                <p className="form_tip">没有帐号？<span onClick={() => {
+                    setDeg(-180)
+                }}>立即注册</span></p>
             </div>
         </div>
     )
-}
+})
