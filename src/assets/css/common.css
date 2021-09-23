@@ -60,12 +60,17 @@
   background-size: 100% auto;
 }
 #main {
+  box-sizing: border-box;
   position: relative;
   z-index: 1;
   padding-top: 1.2rem;
-  min-height: 12.82666667rem;
   background: #f2f9fc;
-  transition: 0.5s;
+  transition: 0.5s transform;
+}
+.pageWrap {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 #footer {
   background: #323436;
@@ -146,10 +151,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.8);
 }
+#menu a.active {
+  color: #fff;
+}
 #menu a:before {
   font-size: 0.4rem;
   margin: 0 0.1rem;
-  color: rgba(255, 255, 255, 0.6);
   vertical-align: middle;
 }
 #menu a:first-child {

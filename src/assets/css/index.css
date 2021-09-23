@@ -32,13 +32,14 @@
   width: 0.4rem;
   height: 0.13333333rem;
   background: white;
-  opacity: .4;
+  opacity: 0.4;
   vertical-align: top;
   margin: 0 0.13333333rem;
 }
 .banner_nav .active {
   opacity: 1;
 }
+
 .index_content {
   padding-top: 0.26666667rem;
   background: #f4fbfe;
@@ -107,7 +108,7 @@
 .index_content .signUp {
   width: 2.66666667rem;
   height: 0.8rem;
-  background: url('../images/btn_bg.png') no-repeat;
+  background: url("../images/btn_bg.png") no-repeat;
   background-size: 100% 100%;
   border: none;
   font: 0.4rem / 0.8rem pingfang;
@@ -168,7 +169,7 @@
   width: 4rem;
   height: 0.93333333rem;
   padding: 0 0.13333333rem 0.16rem 0;
-  background: url('../images/once.png') no-repeat;
+  background: url("../images/once.png") no-repeat;
   background-size: 100% auto;
   border: none;
   box-sizing: content-box;
@@ -194,7 +195,7 @@
   padding-top: 0.36rem;
 }
 .characteristic_list li::before {
-  content: '';
+  content: "";
   float: left;
   width: 1.86666667rem;
   height: 1.86666667rem;
@@ -230,7 +231,7 @@
   text-align: center;
 }
 .works .more::before {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: top;
   width: 0.48rem;
@@ -284,7 +285,7 @@
   margin-right: 0.25333333rem;
 }
 .works_list .wrork_txt span em:nth-of-type(1)::before {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: top;
   width: 0.32rem;
@@ -298,7 +299,7 @@
   margin-right: 0.13333333rem;
 }
 .works_list .wrork_txt span em:nth-of-type(2)::before {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: top;
   width: 0.29333333rem;

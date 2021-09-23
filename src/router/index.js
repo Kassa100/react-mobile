@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom"
-import routeList from './router_config';
+import { routeList } from './router_config';
 
 export default function IndexRouter() {
     return (
