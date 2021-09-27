@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import BScroll from "better-scroll"
+import BScroll from "@better-scroll/core"
+import PullUp from "@better-scroll/pull-up"
 import { useInnerHeight } from '../hooks'
 import Header from './Header'
 import Menu from './Menu'
@@ -8,8 +9,8 @@ import '../assets/css/common.css'
 export default function Frame(props) {
     const [showMenu, setShowMenu] = useState(false)
     const innerHeight = useInnerHeight()
-    let pageScroll = null;
     const wrap = useRef(null);
+    const { pullUp, getData } = props
     function changeShow() {
         setShowMenu(!showMenu)
     }
@@ -17,7 +18,31 @@ export default function Frame(props) {
         setShowMenu(false)
     }
     useEffect(() => {
-        pageScroll = new BScroll(wrap.current);
+        BScroll.use(PullUp)
+        let pageScroll = new BScroll(wrap.current, {
+            preventDefaultException: {
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
+            },
+            pullUpLoad: pullUp ? {
+                threshold: 200
+            } : false
+        });
+        if (pullUp) {
+            pageScroll.on('pullingUp', () => {
+                getData().then(res => {
+                    if (res) {
+                        pageScroll.finishPullUp()
+                        pageScroll.refresh()
+                    } else {
+                        pageScroll.closePullUp()
+                    }
+
+                });
+            })
+        }
+        return () => {
+            pageScroll = null
+        }
     }, [])
     return (
         <div>
