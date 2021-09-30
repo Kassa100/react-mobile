@@ -119,10 +119,12 @@ h3,
 h4,
 ul,
 p,
+ol,
 figure {
   margin: 0;
 }
-ul {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }

@@ -21,6 +21,11 @@ export default function works(state = {
                 ...state,
                 loadEnd: true,
             }
+        case 'LEAVEINDEX':
+            return {
+                ...state,
+                data: [],
+            }
         default:
             return state;
     }

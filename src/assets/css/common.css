@@ -90,14 +90,14 @@
   font: 0.32rem / 1.10666667rem fzlt;
   padding: 0 0.26666667rem;
 }
-.link a {
+.link div {
   color: #fff;
 }
-.link a:nth-of-type(1) {
+.link div:nth-of-type(1) {
   float: left;
   padding-right: 0.42666667rem;
 }
-.link a:nth-of-type(1)::before {
+.link div:nth-of-type(1)::before {
   content: "";
   width: 0.48rem;
   height: 0.38666667rem;
@@ -106,10 +106,10 @@
   background: url("../images/teacher_email.png") no-repeat 0 0 / 100% 100%;
   margin: 0.37333333rem 0.30666667rem 0 0.58666667rem;
 }
-.link a:nth-of-type(2) {
+.link div:nth-of-type(2) {
   float: left;
 }
-.link a:nth-of-type(2)::before {
+.link div:nth-of-type(2)::before {
   content: "";
   width: 0.42666667rem;
   height: 0.45333333rem;
@@ -121,7 +121,7 @@
 .foot_nav {
   padding: 0 0.26666667rem 0.34666667rem;
 }
-.foot_nav a {
+.foot_nav div {
   float: left;
   width: 2.36rem;
   font: 0.32rem / 0.62666667rem "微软雅黑";
@@ -130,7 +130,7 @@
   background: url("../images/line.jpg") no-repeat right center / 0.02666667rem
     0.34666667rem;
 }
-.foot_nav a:nth-of-type(4) {
+.foot_nav div:nth-of-type(4) {
   background: none;
 }
 #menu {
@@ -138,7 +138,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  padding: 1.2rem 0.5rem;
+  padding: 1.2rem 0rem;
   width: 4.5rem;
   height: 100vh;
   background: url("../images/menu.png") no-repeat;
@@ -161,4 +161,32 @@
 }
 #menu a:first-child {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.skeleton .skeleton-row {
+  display: flex;
+}
+
+.skeleton .skeleton-row span {
+  flex: 1;
+  margin: 10px 10px;
+  height: 10px;
+  background: #666;
+  animation: skeleton 2s infinite alternate;
+}
+
+@keyframes skeleton {
+  0% {
+    background: #666;
+  }
+  100% {
+    background: #999;
+  }
+}
+
+.skeleton .skeleton-row:nth-child(2n) span {
+  animation: skeleton 2s infinite alternate;
+}
+.skeleton .skeleton-row:nth-child(2n + 1) span {
+  animation: skeleton 1.5s 0.2s infinite alternate;
 }

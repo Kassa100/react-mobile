@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default function Works(props) {
@@ -8,7 +9,7 @@ export default function Works(props) {
             <ul className="works_list clearfix">
                 {data.map(item => (
                     <li key={item.id}>
-                        <a href="/work/1">
+                        <Link to={"/work/" + item.id}>
                             <img src={item.icon} alt='' className="work_a" />
                             <span className="wrork_txt clearfix work_a">
                                 <strong className="work_a">{item.title}</strong>
@@ -17,11 +18,11 @@ export default function Works(props) {
                                     <em className="work_a">{item.good}</em>
                                 </span>
                             </span>
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
-            <a className="more">{loadEnd ? '没有新数据了' : (loading ? '正在加载中' : '上滑加载更多')}</a>
+            <p className="more">{loadEnd ? '没有新数据了' : (loading ? '正在加载中' : '上滑加载更多')}</p>
         </div>
     )
 }

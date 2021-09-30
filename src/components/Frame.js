@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import BScroll from "@better-scroll/core"
 import PullUp from "@better-scroll/pull-up"
+import ObserveDOM from '@better-scroll/observe-dom'
 import { useInnerHeight } from '../hooks'
 import Header from './Header'
 import Menu from './Menu'
@@ -10,7 +11,7 @@ export default function Frame(props) {
     const [showMenu, setShowMenu] = useState(false)
     const innerHeight = useInnerHeight()
     const wrap = useRef(null);
-    const { pullUp, getData } = props
+    const { pullUp, getData, bounce } = props
     function changeShow() {
         setShowMenu(!showMenu)
     }
@@ -19,13 +20,17 @@ export default function Frame(props) {
     }
     useEffect(() => {
         BScroll.use(PullUp)
+        BScroll.use(ObserveDOM)
         let pageScroll = new BScroll(wrap.current, {
             preventDefaultException: {
-                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A|SPAN|IMG)$/,
+                className: /(^|\s)work_a(\s|$)/
             },
             pullUpLoad: pullUp ? {
                 threshold: 200
-            } : false
+            } : false,
+            bounce,
+            observeDOM: true
         });
         if (pullUp) {
             pageScroll.on('pullingUp', () => {
@@ -35,6 +40,7 @@ export default function Frame(props) {
                         pageScroll.refresh()
                     } else {
                         pageScroll.closePullUp()
+                        pageScroll.refresh()
                     }
 
                 });

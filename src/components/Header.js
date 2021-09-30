@@ -40,7 +40,7 @@ export default withRouter(function Header(props) {
         <header id="header">
             <nav className="menu">
                 {/* 返回按钮*/}
-                {pathName === '/login' ?
+                {pathName === '/login' || pathName.indexOf('/work') !== -1 ?
                     <div onClick={() => { goBack() }} className="header-btn-left iconfont icon-back"></div> :
                     <div onClick={() => { changeShow() }} className="header-btn-left iconfont icon-hycaidan"></div>}
 

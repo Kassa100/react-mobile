@@ -1,44 +1,39 @@
 .teacher_banner {
   height: 7.28rem;
   padding: 0 0.08rem;
-  background: url('../images/teacher_bg.jpg') no-repeat 0px 0px / 100% 100%;
+  background: url("../images/teacher_bg.jpg") no-repeat 0px 0px / 100% 100%;
   overflow: hidden;
   position: relative;
 }
 .teacher_banner h2 {
   width: 2.52rem;
   height: 1.01333333rem;
-  background: url('../images/teachr_title.png') no-repeat 0px 0px / 100% 100%;
+  background: url("../images/teachr_title.png") no-repeat 0px 0px / 100% 100%;
   margin: 0.6rem auto 0.78666667rem;
 }
 .teacher_banner h2 span {
   display: none;
 }
-.teacher_banner .teacher_photo_box {
+
+.lecture_list {
   width: 100%;
-  overflow: auto;
+  height: 4rem;
+  display: flex;
+  box-sizing: border-box;
 }
-.teacher_photo_list {
-  width: 200%;
-  height: 3.84rem;
-}
-.teacher_photo_list li {
+.lecture_list li {
   width: 2.37333333rem;
-  margin: 0 0.45333333rem;
-  float: left;
+  margin: 0 auto;
 }
-.teacher_photo_list .teacher_message div {
+.lecture_list li img {
+  box-sizing: border-box;
   border-radius: 50%;
   background: #5394cb;
   border: 3px solid #fff;
 }
-.teacher_photo_list .teacher_message img {
-  width: 2.26666667rem;
-  height: 2.26666667rem;
-}
-.teacher_photo_list .teacher_message figcaption {
+.lecture_list p {
   width: 1.6rem;
-  height: 0.53333333rem;
+  height: 00.53333333rem;
   border: 2px solid #fff;
   margin: 0.26666667rem auto 0;
   border-radius: 0.4rem;
@@ -46,22 +41,6 @@
   box-sizing: border-box;
   text-align: center;
   color: #fff;
-}
-.teacher_list_dot {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 1.04rem;
-  text-align: center;
-  font-size: 0px;
-}
-.teacher_list_dot li {
-  width: 0.4rem;
-  height: 0.13333333rem;
-  background: rgba(255, 255, 255, 0.5);
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 0.26666667rem;
 }
 .teacher_index {
   background: #f4fbfe;
@@ -79,7 +58,7 @@
   width: 4.73333333rem;
   height: 4.66666667rem;
   float: left;
-  border: 1px  solid #dce7eb;
+  border: 1px solid #dce7eb;
   box-sizing: border-box;
   margin-top: -1px;
   background-color: white;
@@ -88,20 +67,20 @@
   background-origin: border-box;
 }
 .teacher_list li::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/list1.png') no-repeat 0px 0px / 100% 100%;
+  background: url("../images/list1.png") no-repeat 0px 0px / 100% 100%;
 }
 .teacher_list li:nth-of-type(2)::before {
-  background-image: url('../images/list2.png');
+  background-image: url("../images/list2.png");
 }
 .teacher_list li:nth-of-type(3)::before {
-  background-image: url('../images/list3.png');
+  background-image: url("../images/list3.png");
 }
 .teacher_list li:nth-of-type(4)::before {
-  background-image: url('../images/list4.png');
+  background-image: url("../images/list4.png");
 }
 .teacher_list li:nth-of-type(even) {
   margin-left: -1px;
@@ -110,7 +89,7 @@
   border-color: transparent;
 }
 .active {
-  background: url('../images/teacher_new.png') no-repeat 0px 0px / 100% 100%;
+  background: url("../images/teacher_new.png") no-repeat 0px 0px / 100% 100%;
 }
 .active::before {
   opacity: 0.2;
@@ -120,7 +99,7 @@
   position: relative;
 }
 .active .message_li::before {
-  content: 'NEW';
+  content: "NEW";
   position: absolute;
   width: 1.86666667rem;
   height: 0.53333333rem;
@@ -195,7 +174,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url('../images/elastic_bg.png') no-repeat 0px 0px / 100%;
+  background: url("../images/elastic_bg.png") no-repeat 0px 0px / 100%;
 }
 .elastic_img {
   width: 2.4rem;
@@ -218,13 +197,16 @@
   color: #fff0cc;
   text-align: center;
   padding-bottom: 0.17333333rem;
-  background: url('../images/dot.png') repeat-x left bottom;
+  background: url("../images/dot.png") repeat-x left bottom;
 }
 .elastic_content {
-  padding-top: 0.44rem;
+  height: 7rem;
+  overflow: hidden;
+  margin-top: 0.44rem;
   font: 0.34666667rem / 0.56rem "宋体";
   color: #fff;
   position: relative;
+  padding: 0 10px;
 }
 .elastic_content p {
   position: relative;
@@ -232,7 +214,7 @@
   margin-bottom: 0.54666667rem;
 }
 .elastic_content p::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 0.18666667rem;
   height: 0.18666667rem;
@@ -262,7 +244,7 @@
   overflow: hidden;
 }
 .close::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -272,7 +254,7 @@
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .close::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;

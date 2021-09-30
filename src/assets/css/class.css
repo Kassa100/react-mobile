@@ -1,5 +1,5 @@
 .class_box {
-  background: #3189ce url('../images/class_bg.jpg') no-repeat 0 0 / 100% 100%;
+  background: #3189ce url("../images/class_bg.jpg") no-repeat 0 0 / 100% 100%;
   overflow: hidden;
   padding: 0 0.26666667rem;
   height: 100%;
@@ -7,7 +7,7 @@
 .class_box h2 {
   width: 3.78666667rem;
   height: 1.01333333rem;
-  background: url('../images/class_week.png') no-repeat 0 0 / 100% 100%;
+  background: url("../images/class_week.png") no-repeat 0 0 / 100% 100%;
   margin: 0.66666667rem auto 0.82666667rem;
 }
 .class_box h2 span {
@@ -59,22 +59,28 @@
   text-indent: 0.76rem;
 }
 .week1 {
-  background: #faf1f7 url('../images/week1.png') no-repeat center / 0.94666667rem 0.37333333rem;
+  background: #faf1f7 url("../images/week1.png") no-repeat center /
+    0.94666667rem 0.37333333rem;
 }
 .week2 {
-  background: #fcf8f2 url('../images/week2.png') no-repeat center / 0.94666667rem 0.37333333rem;
+  background: #fcf8f2 url("../images/week2.png") no-repeat center /
+    0.94666667rem 0.37333333rem;
 }
 .week3 {
-  background: #f3f8ef url('../images/week3.png') no-repeat center / 0.94666667rem 0.37333333rem;
+  background: #f3f8ef url("../images/week3.png") no-repeat center /
+    0.94666667rem 0.37333333rem;
 }
 .week4 {
-  background: #f3f8ef url('../images/week4.png') no-repeat center / 0.98666667rem 0.37333333rem;
+  background: #f3f8ef url("../images/week4.png") no-repeat center /
+    0.98666667rem 0.37333333rem;
 }
 .week5 {
-  background: #f0f1fb url('../images/week5.png') no-repeat center / 0.98666667rem 0.38666667rem;
+  background: #f0f1fb url("../images/week5.png") no-repeat center /
+    0.98666667rem 0.38666667rem;
 }
 .week6 {
-  background: #fcf0f0 url('../images/week6.png') no-repeat center / 0.98666667rem 0.4rem;
+  background: #fcf0f0 url("../images/week6.png") no-repeat center /
+    0.98666667rem 0.4rem;
 }
 .more_message {
   text-align: center;
@@ -82,7 +88,7 @@
   font: 0.34666667rem / 1.42666667rem fzlt;
   color: #fff;
 }
-.more_message a {
+.more_message span {
   display: inline-block;
   width: 3.86666667rem;
   background: #fff;

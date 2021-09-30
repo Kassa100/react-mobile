@@ -7,7 +7,6 @@ export default function Carousels(props) {
     let bannerWrap = useRef(null);
     let [now, setNow] = useState(0);
     useEffect(() => {
-
         BScroll.use(Slide)
         let timer = 0;
         let bScroll = new BScroll(bannerWrap.current, {
